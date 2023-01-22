@@ -1,0 +1,129 @@
+<ion-header translucent>
+    <ion-toolbar style="--background: #eee;--color: #3C4858;--font-weight: 300;--padding-top:15px;">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title> User </ion-title>
+        <ion-buttons slot="end">
+            <ion-button fill="clear" href="/home">
+                <ion-icon name="apps-sharp" slot="icon-only" color="medium" size="large"></ion-icon>
+            </ion-button>
+            <ion-button fill="clear" href="/notifications" id="navbarDropdownMenuLink">
+                <ion-icon name="notifications-sharp" slot="icon-only" color="medium" size="large"></ion-icon>
+                <span class="notification">5</span>
+            </ion-button>
+            <ion-button fill="clear" href="/user">
+                <ion-icon name="person-circle-sharp" slot="icon-only" color="medium" size="large"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <div id="container" style="background: #eee;color: #3C4858;font-weight: 300;">
+        <ion-row class="row" style="margin-bottom: 10px;">
+            <ion-col class="col-lg-8 col-md-8 col-sm-8">
+                <div class="card">
+                    <ion-card-header class="card-header card-header-success">
+                        <ion-card-title class="card-title">Employees Stats</ion-card-title>
+                        <ion-card-subtitle class="card-category">New employees on 15th September, 2016</ion-card-subtitle>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <ion-row class="row">
+                            <ion-col size-md="6" size-sm="6" size-lg="6" size-xs="12">
+                                <ion-item>
+                                    <ion-label position="floating">Username</ion-label>
+                                    <ion-input [(ngModel)]="post.Username"></ion-input>
+                                </ion-item>
+                            </ion-col>
+                            <ion-col size-md="6" size-sm="6" size-lg="6" size-xs="12">
+                                <ion-item>
+                                    <ion-label position="floating">Email address</ion-label>
+                                    <ion-input [(ngModel)]="post.email" type="email"></ion-input>
+                                </ion-item>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row class="row">
+                            <ion-col size-md="6" size-sm="6" size-lg="6" size-xs="12">
+                                <ion-item>
+                                    <ion-label position="floating">Fist Name</ion-label>
+                                    <ion-input [(ngModel)]="post.FistName"></ion-input>
+                                </ion-item>
+                            </ion-col>
+                            <ion-col size-md="6" size-sm="6" size-lg="6" size-xs="12">
+                                <ion-item>
+                                    <ion-label position="floating">Last Name</ion-label>
+                                    <ion-input [(ngModel)]="post.LastName"></ion-input>
+                                </ion-item>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row class="row">
+                            <ion-col size-md="12" size-sm="12" size-lg="12" size-xs="12">
+                                <ion-item>
+                                    <ion-label position="floating">Adress</ion-label>
+                                    <ion-input [(ngModel)]="post.Adress"></ion-input>
+                                </ion-item>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row class="row">
+                            <ion-col size-md="4" size-sm="4" size-lg="4" size-xs="4">
+                                <ion-item>
+                                    <ion-label position="floating">City</ion-label>
+                                    <ion-input [(ngModel)]="post.City"></ion-input>
+                                </ion-item>
+                            </ion-col>
+                            <ion-col size-md="4" size-sm="4" size-lg="4" size-xs="4">
+                                <ion-item>
+                                    <ion-label position="floating">Country</ion-label>
+                                    <ion-input [(ngModel)]="post.Country"></ion-input>
+                                </ion-item>
+                            </ion-col>
+                            <ion-col size-md="4" size-sm="4" size-lg="4" size-xs="4">
+                                <ion-item>
+                                    <ion-label position="floating">Postal Code</ion-label>
+                                    <ion-input [(ngModel)]="post.PostalCode"></ion-input>
+                                </ion-item>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row class="row">
+                            <ion-col size-md="12" size-sm="12" size-lg="12" size-xs="12">
+                                <ion-item>
+                                    <ion-label position="floating">About Me</ion-label>
+                                    <ion-textarea [(ngModel)]="post.AboutMe" placeholder="Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo."></ion-textarea>
+                                </ion-item>
+                            </ion-col>
+                        </ion-row>
+                        <a class="btn btn-info btn-round" style="color:white">Update Profile</a>
+                    </ion-card-content>
+                </div>
+            </ion-col>
+            <ion-col class="col-lg-4 col-md-4 col-sm-4">
+                <div class="card">
+                    <ion-card-header style="align-items: center ;" class="card-header card-header">
+                        <ion-item centered>
+                            <ion-avatar slot="start">
+                                <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+                            </ion-avatar>
+                            <ion-label>User</ion-label>
+                        </ion-item>
+                    </ion-card-header>
+                    <ion-card-content style="text-align:center;">
+                        <ion-card-subtitle class="card-category">CEO / Co-Founder</ion-card-subtitle>
+                        <ion-card-title class="card-title">Alec Thompson</ion-card-title>
+                        <p class="card-description">
+                            Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                        </p>
+                        <a href="javascript:void(0)" class="btn btn-info btn-round">Follow</a>
+                    </ion-card-content>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </ion-row>
+    </div>
+</ion-content>

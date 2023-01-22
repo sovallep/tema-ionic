@@ -1,0 +1,600 @@
+<ion-header translucent>
+    <ion-toolbar style="--background: #eee;--color: #3C4858;--font-weight: 300;--padding-top:15px;">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title> Home </ion-title>
+        <ion-buttons slot="end">
+            <ion-button fill="clear" href="/home">
+                <ion-icon name="apps-sharp" slot="icon-only" color="medium" size="large"></ion-icon>
+            </ion-button>
+            <ion-button fill="clear" href="/notifications" id="navbarDropdownMenuLink">
+                <ion-icon name="notifications-sharp" slot="icon-only" color="medium" size="large"></ion-icon>
+                <span class="notification">5</span>
+            </ion-button>
+            <ion-button fill="clear" href="/user">
+                <ion-icon name="person-circle-sharp" slot="icon-only" color="medium" size="large"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <div id="container" style="background: #eee;color: #3C4858;font-weight: 300;">
+        <ion-row class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <ion-card-header class="card-header card-header-warning card-header-icon">
+                        <div class="card-icon">
+                            <ion-icon color="light" slot="icon-only" size="large" name="copy"></ion-icon>
+                        </div>
+                        <ion-card-subtitle class="card-category">Used Space</ion-card-subtitle>
+                        <ion-card-title class="card-title">49/50
+                            <small>GB</small>
+                        </ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content class="card-footer">
+                        <div class="stats">
+                            <ion-icon class="material-icons text-danger" name="warning"></ion-icon>
+                            <a href="javascript:void(0)">Get More Space...</a>
+                        </div>
+                    </ion-card-content>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <ion-card-header class="card-header card-header-success card-header-icon">
+                        <div class="card-icon">
+                            <ion-icon color="light" slot="icon-only" size="large" name="storefront"></ion-icon>
+                        </div>
+                        <ion-card-subtitle class="card-category">Revenue</ion-card-subtitle>
+                        <ion-card-title class="card-title">$34,245 </ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content class="card-footer">
+                        <div class="stats">
+                            <ion-icon class="material-icons" name="calendar"></ion-icon>
+                            Last 24 Hours
+                        </div>
+                    </ion-card-content>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <ion-card-header class="card-header card-header-danger card-header-icon">
+                        <div class="card-icon">
+                            <ion-icon color="light" slot="icon-only" size="large" name="alert-circle"></ion-icon>
+                        </div>
+                        <ion-card-subtitle class="card-category">Fixed Issues</ion-card-subtitle>
+                        <ion-card-title class="card-title">75 </ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content class="card-footer">
+                        <div class="stats">
+                            <ion-icon class="material-icons" name="pricetag"></ion-icon>
+                            Tracked from Github
+                        </div>
+                    </ion-card-content>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <ion-card-header class="card-header card-header-info card-header-icon">
+                        <div class="card-icon">
+                            <ion-icon color="light" slot="icon-only" size="large" name="logo-twitter"></ion-icon>
+                        </div>
+                        <ion-card-subtitle class="card-category">Followers</ion-card-subtitle>
+                        <ion-card-title class="card-title">+245 </ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content class="card-footer">
+                        <div class="stats">
+                            <ion-icon class="material-icons" name="timer"></ion-icon>
+                            Just Updated
+                        </div>
+                    </ion-card-content>
+                </div>
+            </div>
+        </ion-row>
+        <ion-row class="row">
+            <div class="col-md-4">
+                <div class="card card-chart">
+                    <ion-card-header class="card-header card-header-success">
+                        <div class="ct-chart">
+                            <canvas id="myChart1"></canvas>
+                        </div>
+                    </ion-card-header>
+                    <ion-card-content class="card-body">
+                        <ion-card-title class="card-title">Daily Sales</ion-card-title>
+                        <ion-card-subtitle class="card-category">+245
+                            <span class="text-success">
+                <ion-icon
+                  class="material-icons"
+                  slot="icon-only"
+                  size="small"
+                  name="arrow-up"
+                ></ion-icon>
+                55%
+              </span> increase in today sales.
+                        </ion-card-subtitle>
+                    </ion-card-content>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <ion-icon class="material-icons" name="time"></ion-icon>
+                            updated 4 minutes ago
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-chart">
+                    <ion-card-header class="card-header card-header-success">
+                        <div class="ct-chart">
+                            <canvas id="myChart"></canvas>
+                        </div>
+                    </ion-card-header>
+                    <ion-card-content class="card-body">
+                        <ion-card-title class="card-title">Email Subscriptions</ion-card-title>
+                        <ion-card-subtitle class="card-category">Last Campaign Performance
+                            <span class="text-warning">
+                <ion-icon
+                  class="material-icons"
+                  slot="icon-only"
+                  size="small"
+                  name="arrow-up"
+                ></ion-icon>
+                55% </span
+              >campaign 2 days ago
+            </ion-card-subtitle>
+          </ion-card-content>
+          <div class="card-footer">
+            <div class="stats">
+              <ion-icon class="material-icons" name="time"></ion-icon>
+              updated 4 minutes ago
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card card-chart">
+          <ion-card-header class="card-header card-header-success">
+            <div class="ct-chart">
+              <canvas id="myChart3"></canvas>     
+            </div>
+          </ion-card-header>
+          <ion-card-content class="card-body">
+            <ion-card-title class="card-title">Completed Tasks</ion-card-title>
+            <ion-card-subtitle class="card-category"
+              >Last Campaign Performance
+              <ion-icon
+                class="material-icons"
+                slot="icon-only"
+                size="small"
+                name="arrow-up"
+              ></ion-icon
+              >campaign sent 2 days ago
+            </ion-card-subtitle>
+          </ion-card-content>
+          <div class="card-footer">
+            <div class="stats">
+              <ion-icon class="material-icons" name="time"></ion-icon>
+              updated 4 minutes ago
+            </div>
+          </div>
+        </div>
+      </div>
+    </ion-row>
+    <ion-row class="row">
+      <div class="col-lg-6 col-md-12">
+        <div class="card">
+          <ion-card-header class="card-header card-header-tabs card-header-info">
+            <div class="nav-tabs-navigation">
+              <div class="nav-tabs-wrapper">
+                <span class="nav-tabs-title">Tasks:</span>
+                            <ul class="nav nav-tabs" data-tabs="tabs">
+                                <li class="nav-item">
+                                    <a mat-button class="nav-link active" href="#profile" data-toggle="tab">
+                                        <ion-icon name="bug"></ion-icon>Bugs
+                                        <div class="ripple-container"></div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a mat-button class="nav-link" href="#messages" data-toggle="tab">
+                                        <ion-icon name="code"></ion-icon> Website
+                                        <div class="ripple-container"></div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a mat-button class="nav-link" href="#settings" data-toggle="tab">
+                                        <ion-icon name="cloudy"></ion-icon> Server
+                                        <div class="ripple-container"></div>
+                                    </a>
+                                </li>
+                            </ul>
+                </div>
+            </div>
+            </ion-card-header>
+            <ion-card-content class="card-body">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="profile">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              value=""
+                              checked
+                            />
+                            <span class="form-check-sign">
+                              <span class="check"></span>
+                            </span>
+                          </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        Sign contract for "What are conference organizers afraid of?"
+                                    </td>
+                                    <td class="td-actions text-right">
+                                        <button mat-raised-button type="button" matTooltip="Edit Task" matTooltipPosition="'above'" class="btn btn-success btn-link  btn-just-icon">
+                          <ion-icon
+                            name="pencil"
+                            slot="icon-only"
+                            size="small"
+                          ></ion-icon>
+                        </button>
+                                        <button mat-raised-button type="button" matTooltip="Remove" matTooltipPosition="'above'" class="btn btn-danger btn-link  btn-just-icon">
+                          <ion-icon
+                            name="close-circle"
+                            slot="icon-only"
+                            size="small"
+                          ></ion-icon>
+                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              value=""
+                            />
+                            <span class="form-check-sign">
+                              <span class="check"></span>
+                            </span>
+                          </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        Lines From Great Russian Literature? Or E-mails From My Boss?
+                                    </td>
+                                    <td class="td-actions text-right">
+                                        <button mat-raised-button type="button" matTooltip="Edit Task" matTooltipPosition="'above'" class="btn btn-success btn-link  btn-just-icon">
+                          <ion-icon
+                            name="pencil"
+                            slot="icon-only"
+                            size="small"
+                          ></ion-icon>
+                        </button>
+                                        <button mat-raised-button type="button" matTooltip="Remove" matTooltipPosition="'above'" class="btn btn-danger btn-link  btn-just-icon">
+                          <ion-icon
+                            name="close-circle"
+                            slot="icon-only"
+                            size="small"
+                          ></ion-icon>
+                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              value=""
+                            />
+                            <span class="form-check-sign">
+                              <span class="check"></span>
+                            </span>
+                          </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
+                                    </td>
+                                    <td class="td-actions text-right">
+                                        <button mat-raised-button type="button" matTooltip="Edit Task" matTooltipPosition="'above'" class="btn btn-success btn-link  btn-just-icon">
+                          <ion-icon
+                            name="pencil"
+                            slot="icon-only"
+                            size="small"
+                          ></ion-icon>
+                        </button>
+                                        <button mat-raised-button type="button" matTooltip="Remove" matTooltipPosition="'above'" class="btn btn-danger btn-link  btn-just-icon">
+                          <ion-icon
+                            name="close-circle"
+                            slot="icon-only"
+                            size="small"
+                          ></ion-icon>
+                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              value=""
+                              checked
+                            />
+                            <span class="form-check-sign">
+                              <span class="check"></span>
+                            </span>
+                          </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        Create 4 Invisible User Experiences you Never Knew About
+                                    </td>
+                                    <td class="td-actions text-right">
+                                        <button mat-raised-button type="button" matTooltip="Edit Task" matTooltipPosition="'above'" class="btn btn-success btn-link  btn-just-icon">
+                          <ion-icon
+                            name="pencil"
+                            slot="icon-only"
+                            size="small"
+                          ></ion-icon>
+                        </button>
+                                        <button mat-raised-button type="button" matTooltip="Remove" matTooltipPosition="'above'" class="btn btn-danger btn-link  btn-just-icon">
+                          <ion-icon
+                            name="close-circle"
+                            slot="icon-only"
+                            size="small"
+                          ></ion-icon>
+                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane" id="messages">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              value=""
+                              checked
+                            />
+                            <span class="form-check-sign">
+                              <span class="check"></span>
+                            </span>
+                          </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
+                                    </td>
+                                    <td class="td-actions text-right">
+                                        <button mat-raised-button type="button" matTooltip="Edit Task" matTooltipPosition="'above'" class="btn btn-success btn-link  btn-just-icon">
+                          <ion-icon
+                            name="pencil"
+                            slot="icon-only"
+                            size="small"
+                          ></ion-icon>
+                        </button>
+                                        <button mat-raised-button type="button" matTooltip="Remove" matTooltipPosition="'above'" class="btn btn-danger btn-link  btn-just-icon">
+                          <ion-icon
+                            name="close-circle"
+                            slot="icon-only"
+                            size="small"
+                          ></ion-icon>
+                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              value=""
+                            />
+                            <span class="form-check-sign">
+                              <span class="check"></span>
+                            </span>
+                          </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        Sign contract for "What are conference organizers afraid of?"
+                                    </td>
+                                    <td class="td-actions text-right">
+                                        <button mat-raised-button type="button" matTooltip="Edit Task" matTooltipPosition="'above'" class="btn btn-success btn-link  btn-just-icon">
+                          <ion-icon
+                            name="pencil"
+                            slot="icon-only"
+                            size="small"
+                          ></ion-icon>
+                        </button>
+                                        <button mat-raised-button type="button" matTooltip="Remove" matTooltipPosition="'above'" class="btn btn-danger btn-link  btn-just-icon">
+                          <ion-icon
+                            name="close-circle"
+                            slot="icon-only"
+                            size="small"
+                          ></ion-icon>
+                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane" id="settings">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              value=""
+                            />
+                            <span class="form-check-sign">
+                              <span class="check"></span>
+                            </span>
+                          </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        Lines From Great Russian Literature? Or E-mails From My Boss?
+                                    </td>
+                                    <td class="td-actions text-right">
+                                        <button mat-raised-button type="button" matTooltip="Edit Task" matTooltipPosition="'above'" class="btn btn-success btn-link  btn-just-icon">
+                          <ion-icon
+                            name="pencil"
+                            slot="icon-only"
+                            size="small"
+                          ></ion-icon>
+                        </button>
+                                        <button mat-raised-button type="button" matTooltip="Remove" matTooltipPosition="'above'" class="btn btn-danger btn-link  btn-just-icon">
+                          <ion-icon
+                            name="close-circle"
+                            slot="icon-only"
+                            size="small"
+                          ></ion-icon>
+                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              value=""
+                              checked
+                            />
+                            <span class="form-check-sign">
+                              <span class="check"></span>
+                            </span>
+                          </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
+                                    </td>
+                                    <td class="td-actions text-right">
+                                        <ion-button>
+                                            <ion-icon name="pencil" slot="icon-only" size="small"></ion-icon>
+                                        </ion-button>
+                                        <button color="">
+                          <ion-button
+                            name="close-circle"
+                            slot="icon-only"
+                            size="small"
+                          ></ion-button>
+                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              value=""
+                              checked
+                            />
+                            <span class="form-check-sign">
+                              <span class="check"></span>
+                            </span>
+                          </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        Sign contract for "What are conference organizers afraid of?"
+                                    </td>
+                                    <td class="td-actions text-right">
+                                        <button mat-raised-button type="button" matTooltip="Edit Task" matTooltipPosition="'above'" class="btn btn-success btn-link  btn-just-icon">
+                          <ion-icon
+                            name="pencil"
+                            slot="icon-only"
+                            size="small"
+                          ></ion-icon>
+                        </button>
+                                        <button mat-raised-button type="button" matTooltip="Remove" matTooltipPosition="'above'" class="btn btn-danger btn-link  btn-just-icon">
+                          <ion-icon
+                            name="close-circle"
+                            slot="icon-only"
+                            size="small"
+                          ></ion-icon>
+                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </ion-card-content>
+    </div>
+    </div>
+    <div class="col-lg-6 col-md-12">
+        <div class="card">
+            <ion-card-header class="card-header card-header-info">
+                <h4 class="card-title">Employees Stats</h4>
+                <p class="card-category">New employees on 15th September, 2016</p>
+            </ion-card-header>
+            <ion-card-content class="card-body table-responsive">
+                <table class="table table-hover">
+                    <thead class="text-success">
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Salary</th>
+                        <th>Country</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Dakota Rice</td>
+                            <td>$36,738</td>
+                            <td>Niger</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Minerva Hooper</td>
+                            <td>$23,789</td>
+                            <td>Curaçao</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Sage Rodriguez</td>
+                            <td>$56,142</td>
+                            <td>Netherlands</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Philip Chaney</td>
+                            <td>$38,735</td>
+                            <td>Korea, South</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </ion-card-content>
+        </div>
+    </div>
+    </ion-row>
+    </div>
+</ion-content>

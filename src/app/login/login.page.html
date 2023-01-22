@@ -1,0 +1,23 @@
+<ion-content>
+    <div class="content">
+
+        <!-- form login -->
+        <form>
+            <h3>LEMUS CONSTRUCTION</h3>
+            <h2 style="text-align:center">Login</h2>
+            <label for="username">Username:</label>
+            <input type="text" [(ngModel)]="login.user" [ngModelOptions]="{standalone: true}" placeholder="Email or Phone" id="username">
+
+            <label for="password">Password:</label>
+            <input type="password" [(ngModel)]="login.password" [ngModelOptions]="{standalone: true}" placeholder="Password" id="password">
+            <div class="botones">
+                <ion-button expand="block" round (click)="validate()">login</ion-button>
+            </div>
+            <ion-row *ngIf="errorMessage !== undefined">
+                <ion-col size="12" text-center>
+                    <p style="color: rgb(246, 153, 153); text-align: center;">{{ errorMessage }}</p>
+                </ion-col>
+            </ion-row>
+        </form>
+    </div>
+</ion-content>
